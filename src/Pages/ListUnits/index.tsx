@@ -1,18 +1,21 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { Button } from "../../Components/Button";
+import { Header } from "../../Components/Header";
 import { Input } from "../../Components/Input";
+import { NewSelect } from "../../Components/NewSelect";
 import { Container } from "./styles";
 
 export const ListUnits = () => {
   return (
     <Container container>
-      <Box sx={{ maxWidth: "50%" }}>
+      <Header title="Gerenciar Unidades  Curriculares" />
+      <Box>
         <Grid container>
           <Grid item xs={12}>
-            <Typography variant="h1">Seja Bem-Vindo(a)!</Typography>
+            <Typography variant="h1">Arquivos</Typography>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="subtitle1">Painel de acesso</Typography>
+            <NewSelect label="Filtrar" />
           </Grid>
           <Grid item xs={12}>
             <Input label="Name de Usuário" />
