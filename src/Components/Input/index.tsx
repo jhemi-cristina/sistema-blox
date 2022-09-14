@@ -8,10 +8,19 @@ interface IInput extends InputHTMLAttributes<HTMLInputElement> {
   icon?: boolean;
   endAdornment?: any;
   values?: string;
+  variant?: any;
+  InputLabelProps?: any;
 }
 
-function Input({ label }: IInput) {
-  return <MaterialInput label={label} variant="standard" />;
+function Input({ label, variant, InputLabelProps, ...props }: IInput) {
+  return (
+    <MaterialInput
+      label={label}
+      variant={variant}
+      InputLabelProps={InputLabelProps}
+      {...props}
+    />
+  );
 }
 
 export { Input };

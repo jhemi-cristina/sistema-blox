@@ -1,9 +1,14 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import { SignIn } from "./Pages/SignIn";
+import { Routes } from "./Routes";
 
 function App() {
-  return <SignIn />;
+  return (
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  );
 }
 
 export default App;

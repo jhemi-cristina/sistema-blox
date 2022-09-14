@@ -3,23 +3,18 @@ import { withStyles } from "@mui/styles";
 
 export const Container = withStyles(() => ({
   root: {
-    minHeight: "100vh",
-    color: "#969696",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
 
-    "& > div": {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    },
     "& h1": {
       fontSize: "30px",
     },
     "& h6": {
       fontSize: "15px",
+      gap: "20px",
     },
 
-    "& button": {
-      padding: "10px 80px",
-    },
+    "& button": {},
   },
 }))(Grid);

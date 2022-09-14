@@ -4,7 +4,7 @@ import { withStyles } from "@mui/styles";
 export const MaterialInput = withStyles(() => ({
   root: {
     "& input": {
-      minWidth: "300px",
+      minWidth: (props) => props.minWidth && "500px",
     },
   },
 }))(TextField);

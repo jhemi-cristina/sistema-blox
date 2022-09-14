@@ -4,22 +4,33 @@ import { withStyles } from "@mui/styles";
 export const Container = withStyles(() => ({
   root: {
     minHeight: "100vh",
-    color: "#969696",
 
-    "& > div": {
+    "& .MuiTextField-root": {
+      minWidth: "100%",
+    },
+
+    "& .css-13i4rnv-MuiGrid-root  ": {
+      minWidth: "100%",
+    },
+
+    "& h1": {
+      fontSize: "25px",
+      marginTop: "70px",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      fontWeight: 600,
     },
-    "& h1": {
-      fontSize: "30px",
-    },
+
     "& h6": {
       fontSize: "15px",
+      fontWeight: 700,
+      display: "flex",
+      alignItems: "center",
     },
 
     "& button": {
-      padding: "10px 80px",
+      minWidth: "100%",
     },
   },
 }))(Grid);

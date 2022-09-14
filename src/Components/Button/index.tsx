@@ -1,9 +1,11 @@
 import { ContainedButtons } from "./styles";
 
-interface IButton {}
+interface IButton {
+  title?: string;
+}
 
-function Button({}: IButton) {
-  return <ContainedButtons variant="contained">Contained</ContainedButtons>;
+function Button({ title }: IButton) {
+  return <ContainedButtons variant="contained">{title}</ContainedButtons>;
 }
 
 export { Button };
