@@ -1,4 +1,4 @@
-import { CardHeader } from "@mui/material";
+import { Grid } from "@mui/material";
 import { withStyles } from "@mui/styles";
 
 export const ContainerHeader = withStyles(() => ({
@@ -6,8 +6,8 @@ export const ContainerHeader = withStyles(() => ({
     gridArea: "header",
     height: "85px",
     width: "100%",
+    fontWeight: 700,
     color: "#ffff",
     backgroundColor: "#608afc",
-    borderRadius: "0!important",
   },
-}))(CardHeader);
+}))(Grid);
