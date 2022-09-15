@@ -1,0 +1,207 @@
+{
+  "id": 16113,
+  "location": "Comercial Ensino Superior",
+  "schedules": [],
+  "price": "150.0",
+  "title": "Design Thinking Workshop ",
+  "modality": "EAD",
+  "hours_points": 40.0,
+  "language": null,
+  "language_flag_url": null,
+  "cached_blox": {
+    "id": 5230,
+    "url": null,
+    "code": 589,
+    "hours": 40.0,
+    "pages": null,
+    "title": "Design Thinking Workshop",
+    "total": null,
+    "legacy": false,
+    "status": "accepted",
+    "tracks": [],
+    "credits": 2.0,
+    "program": null,
+    "modality": "EAD",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    "video_url": "",
+    "created_at": "2019-12-17T21:50:32.207-02:00",
+    "objectives": "{\"blocks\":[{\"key\":\"dek2k\",\"text\":\"Desarrollar en los participantes habilidades para diseñar nuevas soluciones a problemas que generen valor a los clientes y al negocio.\\n\\nBeneficios\\n1.Aplicación paso a paso de la metodología y herramientas para incrementar las competencias de ejecutar proyectos de innovación e identificar nuevas oportunidades de negocio. 2.Aprendizaje de herramientas fáciles y estructuradas para el desarrollo de cada fase de la metodología que se pueden aplicar de forma inmediata en la empresa. 3.Metodología enfocada a la práctica profesional. 4.Desarrollo de competencias relacionadas a la innovación y a la gestión de proyectos. 5.Uso de una metodología de innovación para la resolución de problemas empresariales enfocados a las necesidades de clientes. 6.Incrementar la aproximación y metodologías de innovación disponibles para la empresa.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+    "updated_at": "2020-07-07T10:33:41.451-03:00",
+    "competences": [
+      {
+        "id": 303,
+        "name": "Transformação Digital",
+        "icon_url": "https://bloxproduction.s3.sa-east-1.amazonaws.com/store/711e96993abb5072db3450720ef5417a?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2TX23I53JQA7CNA%2F20200721%2Fsa-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200721T163715Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=f8e4967ca3039c8a025cbe018cfef08c5c40417f6f92b6f1c876341911f21e79",
+        "description": "Transformação Digital é um processo em que as empresas utilizam a tecnologia para melhorar seu desempenho, ampliar seu alcance e otimizar os resultados. Essa transformação gera uma mudança de mindset em toda a empresa, tanto internamente quanto externamente, para os clientes."
+      },
+      {
+        "id": 300,
+        "name": "Inteligencia social",
+        "icon_url": "https://bloxproduction.s3.sa-east-1.amazonaws.com/store/b7a9119dde9b697bb94cc95784f96784?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2TX23I53JQA7CNA%2F20200721%2Fsa-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200721T163715Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=4bf731dc980c7dce7aaf8b110beeaafa96da147907df5d65e411a55c4f2bbcab",
+        "description": "Saber relacionarse e interactuar con otras personas y culturas, además de saber negociar."
+      },
+      {
+        "id": 298,
+        "name": "Autoconhecimento",
+        "icon_url": "https://bloxproduction.s3.sa-east-1.amazonaws.com/store/081c2e871011b71cb313a3492832a16b?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2TX23I53JQA7CNA%2F20200721%2Fsa-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200721T163715Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=53ea9978d92a8cbd748a0c72dbefc431763d87beb60a323b45eaa0b2365aa9ae",
+        "description": "Uma pessoa consciente de si mesma e de seus pensamentos, consegue identificar suas forças e fraquezas e trabalhar com foco para se desenvolver constantemente. Por isso, na maioria das vezes, buscar o autoconhecimento é o primeiro passo para ter uma vida profissional mais bem sucedida e saudável."
+      }
+    ],
+    "external_id": "589",
+    "modality_id": 58,
+    "responsible": {
+      "id": 24145,
+      "name": "Juan Martín Maldacena",
+      "email": "",
+      "shortbio": null,
+      "username": "professor",
+      "picture_url": null
+    },
+    "blox_classes": [
+      {
+        "id": 28069,
+        "order": 1,
+        "blox_id": 5230,
+        "context": "Introducción al design thinking",
+        "question": "Introducción al design thinking",
+        "methodology": {
+          "id": 121,
+          "name": "Aprendizagem Baseada em Problemas (PBL)",
+          "icon_data": null,
+          "created_at": "2019-12-17T20:47:15.223-02:00",
+          "updated_at": "2020-05-13T23:14:51.406-03:00",
+          "external_data": {},
+          "material_icon": "compare_arrows",
+          "institution_id": 22
+        },
+        "preparation": "",
+        "extra_fields": [],
+        "methodology_id": 121,
+        "blox_class_attachments_attributes": []
+      },
+      {
+        "id": 28070,
+        "order": 2,
+        "blox_id": 5230,
+        "context": "Introducción al design thinking",
+        "question": "Introducción al design thinking",
+        "methodology": {
+          "id": 121,
+          "name": "Aprendizagem Baseada em Problemas (PBL)",
+          "icon_data": null,
+          "created_at": "2019-12-17T20:47:15.223-02:00",
+          "updated_at": "2020-05-13T23:14:51.406-03:00",
+          "external_data": {},
+          "material_icon": "compare_arrows",
+          "institution_id": 22
+        },
+        "preparation": "",
+        "extra_fields": [],
+        "methodology_id": 121,
+        "blox_class_attachments_attributes": []
+      },
+      {
+        "id": 28071,
+        "order": 3,
+        "blox_id": 5230,
+        "context": "Herramientas para la obtención de información (empatía con el cliente).",
+        "question": "Herramientas para la obtención de información (empatía con el cliente).",
+        "methodology": {
+          "id": 119,
+          "name": "Estudos de Caso",
+          "icon_data": null,
+          "created_at": "2019-12-17T20:45:15.056-02:00",
+          "updated_at": "2020-05-13T23:15:28.713-03:00",
+          "external_data": {},
+          "material_icon": "chrome_reader_mode",
+          "institution_id": 22
+        },
+        "preparation": "",
+        "extra_fields": [],
+        "methodology_id": 119,
+        "blox_class_attachments_attributes": []
+      }
+    ],
+    "blox_profile": {
+      "id": 83,
+      "name": "Avançado",
+      "icon_url": "https://bloxproduction.s3.sa-east-1.amazonaws.com/store/216c2af5f1a8c94f7b997e66f505556e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2TX23I53JQA7CNA%2F20200721%2Fsa-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200721T163715Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=b5fd1b4e6c9c0e3578fa78068b6306a5e6d485d33dd08c405e234bbf1d85cd13",
+      "description": "Avançado",
+      "icon_dark_url": "https://bloxproduction.s3.sa-east-1.amazonaws.com/store/ebd2ec9cf39fc69119f82d9dfd2c713a?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2TX23I53JQA7CNA%2F20200721%2Fsa-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200721T163715Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=b230af979ffab1a38140d63511f493b24657e224f99864099b44dd46999214db",
+      "material_icon": null
+    },
+    "extra_fields": [],
+    "blox_template": null,
+    "knowledge_area": {
+      "id": 122,
+      "name": "Básico",
+      "color1": "#f82637",
+      "color2": "#d31f31",
+      "color3": "#af1c31",
+      "color4": "#d31f31",
+      "icon_url": null,
+      "description": "Gerais são aqueles que são comuns a formação de todos os candidatos, ainda que eles incluam várias áreas."
+    },
+    "functional_area": {
+      "id": 446,
+      "icon": null,
+      "name": "Gestão Estratégica",
+      "description": "Gestão estratégica de empresas é um termo que se refere às técnicas de gestão, avaliação e ao conjunto de ferramentas respectivas concebidas para ajudar empresas na tomada de decisões estratégicas de alto nível.",
+      "icon_dark_url": "https://bloxproduction.s3.sa-east-1.amazonaws.com/store/836ed98682ad06af6c7767ec6b3b5271?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARWJ2S7DWNZP5A6X5%2F20220915%2Fsa-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220915T175451Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=0f59ad96fc168cfb99d7488454b09e7d59bb553bb96a136aea3f3f591d9213b6",
+      "icon_white_url": "https://bloxproduction.s3.sa-east-1.amazonaws.com/store/59510eaa75c80e28da4175f0a1223f12?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARWJ2S7DWNZP5A6X5%2F20220915%2Fsa-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220915T175451Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=96a8b53b25c50dd7b728b2f6113f389c531e83b1f1129252d3269c8565a0978d"
+    },
+    "blox_attachments": [
+      {
+        "id": 15031,
+        "kind": "basic",
+        "name": "Métodos creativos para la definición de opciones de solución",
+        "media": "Libros",
+        "file_url": null,
+        "description": "Métodos creativos para la definición de opciones de solución",
+        "extra_fields": []
+      },
+      {
+        "id": 15032,
+        "kind": "complementary",
+        "name": "Métodos creativos para la definición de opciones de solución",
+        "media": "Sitio Web",
+        "file_url": null,
+        "description": "Métodos creativos para la definición de opciones de solución",
+        "extra_fields": []
+      }
+    ],
+    "blox_evaluations": [],
+    "allow_ead_content": true,
+    "bibliography_basic": [
+      {
+        "id": 15031,
+        "kind": "basic",
+        "name": "Métodos creativos para la definición de opciones de solución",
+        "media": "Libros",
+        "blox_id": 5230,
+        "file_data": null,
+        "created_at": "2019-12-17T21:53:10.170-02:00",
+        "updated_at": "2019-12-17T21:53:10.170-02:00",
+        "description": "Métodos creativos para la definición de opciones de solución",
+        "extra_fields": [],
+        "bibliography_type_id": 54
+      }
+    ],
+    "pedagogic_resources": null,
+    "bibliography_complementary": [
+      {
+        "id": 15032,
+        "kind": "complementary",
+        "name": "Métodos creativos para la definición de opciones de solución",
+        "media": "Sitio Web",
+        "blox_id": 5230,
+        "file_data": null,
+        "created_at": "2019-12-17T21:53:10.174-02:00",
+        "updated_at": "2019-12-17T21:53:10.174-02:00",
+        "description": "Métodos creativos para la definición de opciones de solución",
+        "extra_fields": [],
+        "bibliography_type_id": 55
+      }
+    ]
+  }
+}
