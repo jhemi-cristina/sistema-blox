@@ -20,8 +20,8 @@ export const SignIn = () => {
   const watchFields = watch();
 
   function handleSubmitForm() {
-    const { login_user_email, login_user_password } = watchFields;
-    SignIn({ login_user_email, login_user_password });
+    const { username, password } = watchFields;
+    SignIn({ username, password });
   }
 
   // const [values, setValues] = React.useState<State>({
@@ -44,41 +44,41 @@ export const SignIn = () => {
   //   };
   // };
   return (
-    <Container container>
-      <Box sx={{ maxWidth: "50%", margin: "0 auto" }}>
-        <Grid
-          container
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Grid item xs={12} mb={5}>
-            <Typography variant="h1">Seja Bem-Vindo(a)!</Typography>
-          </Grid>
-          <Grid item xs={12} mb={5}>
-            <Typography variant="subtitle1">Painel de acesso</Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Controller
-              control={control}
-              name="login_user_email"
-              render={({ field: { onChange, value, name } }) => (
-                <Input
-                  onChange={onChange}
-                  name={name}
-                  value={value}
-                  label="usuario"
-                  variant="standard"
-                  width={500}
-                />
-              )}
-            />
-          </Grid>
-          <form onSubmit={handleSubmit(handleSubmitForm)}>
+    <form onSubmit={handleSubmit(handleSubmitForm)}>
+      <Container container>
+        <Box sx={{ maxWidth: "50%", margin: "0 auto" }}>
+          <Grid
+            container
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Grid item xs={12} mb={5}>
+              <Typography variant="h1">Seja Bem-Vindo(a)!</Typography>
+            </Grid>
+            <Grid item xs={12} mb={5}>
+              <Typography variant="subtitle1">Painel de acesso</Typography>
+            </Grid>
             <Grid item xs={12}>
               <Controller
                 control={control}
-                name="login_user_password"
+                name="username"
+                render={({ field: { onChange, value, name } }) => (
+                  <Input
+                    onChange={onChange}
+                    name={name}
+                    value={value}
+                    label="nome do usuario"
+                    variant="standard"
+                    width={500}
+                  />
+                )}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Controller
+                control={control}
+                name="password"
                 render={({ field: { onChange, value, name } }) => (
                   <Input
                     onChange={onChange}
@@ -87,23 +87,6 @@ export const SignIn = () => {
                     label="Senha"
                     variant="standard"
                     type="password"
-                    endAdornment={
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="toggle password visibility"
-                          // onClick={handleClickShowPassword}
-                          // onMouseDown={handleMouseDownPassword}
-                          edge="end"
-                        >
-                          {showPassword ? (
-                            <VisibilityOff sx={{ color: "#000" }} />
-                          ) : (
-                            <p>testess</p>
-                            // <Visibility sx={{ color: "#000" }} />
-                          )}
-                        </IconButton>
-                      </InputAdornment>
-                    }
                   />
                 )}
               />
@@ -118,9 +101,9 @@ export const SignIn = () => {
                 </Grid>
               </Grid>
             </Grid>
-          </form>
-        </Grid>
-      </Box>
-    </Container>
+          </Grid>
+        </Box>
+      </Container>
+    </form>
   );
 };
