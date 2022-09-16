@@ -1,18 +1,30 @@
 import {
   Box,
+  Button,
   Grid,
   IconButton,
   InputAdornment,
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { Button } from "../../Components/Button";
 import { Input } from "../../Components/Input";
 import { Container } from "./styles";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { useAuth } from "../../Context/AuthContext";
+import { Controller, useForm } from "react-hook-form";
 
 export const SignIn = () => {
   const [showPassword, setShowPassword] = useState(true);
+  const { SignIn } = useAuth();
+  const { control, handleSubmit, watch } = useForm();
+  const watchFields = watch();
+
+  function handleSubmitForm() {
+    const { login_user_email, login_user_password } = watchFields;
+    SignIn({ login_user_email, login_user_password });
+    console.log("watchFields", watchFields);
+  }
+
   // const [values, setValues] = React.useState<State>({
   //   amount: "",
   //   password: "",
@@ -48,42 +60,65 @@ export const SignIn = () => {
             <Typography variant="subtitle1">Painel de acesso</Typography>
           </Grid>
           <Grid item xs={12}>
-            <Input label="Name de Usuário" variant="standard" />
-          </Grid>
-          <Grid item xs={12}>
-            <Input
-              label="Senha"
-              variant="standard"
-              type="password"
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    // onClick={handleClickShowPassword}
-                    // onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {showPassword ? (
-                      <VisibilityOff sx={{ color: "#000" }} />
-                    ) : (
-                      <p>testess</p>
-                      // <Visibility sx={{ color: "#000" }} />
-                    )}
-                  </IconButton>
-                </InputAdornment>
-              }
+            <Controller
+              control={control}
+              name="login_user_email"
+              render={({ field: { onChange, value, name } }) => (
+                <Input
+                  onChange={onChange}
+                  name={name}
+                  value={value}
+                  label="usuario"
+                  variant="standard"
+                />
+              )}
             />
           </Grid>
-          <Grid item xs={12}>
-            <Grid container spacing={2} mt={5}>
-              <Grid item>
-                <Button title="VOLTAR" />
-              </Grid>
-              <Grid item>
-                <Button title="ACESSAR" />
+          <form onSubmit={handleSubmit(handleSubmitForm)}>
+            <Grid item xs={12}>
+              <Controller
+                control={control}
+                name="login_user_password"
+                render={({ field: { onChange, value, name } }) => (
+                  <Input
+                    onChange={onChange}
+                    name={name}
+                    value={value}
+                    label="Senha"
+                    variant="standard"
+                    type="password"
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          // onClick={handleClickShowPassword}
+                          // onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                        >
+                          {showPassword ? (
+                            <VisibilityOff sx={{ color: "#000" }} />
+                          ) : (
+                            <p>testess</p>
+                            // <Visibility sx={{ color: "#000" }} />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                  />
+                )}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Grid container spacing={2} mt={5}>
+                <Grid item>
+                  <Button />
+                </Grid>
+                <Grid item>
+                  <Button onClick={handleSubmitForm}>ACESSAR</Button>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
+          </form>
         </Grid>
       </Box>
     </Container>

@@ -1,4 +1,5 @@
 import { Avatar, Card, Grid, Stack, Typography } from "@mui/material";
+import PageviewIcon from "@mui/icons-material/Pageview";
 
 export function CardUnit({ data }: any) {
   const { id, title, modality, cached_blox } = data;
@@ -21,7 +22,11 @@ export function CardUnit({ data }: any) {
       <Stack sx={{ backgroundColor: primaryColor, padding: "10px" }}>
         <Grid container>
           <Grid item lg={2} sm={12}>
-            Image
+            {cached_blox?.responsible.picture_url ?? (
+              <Avatar>
+                <PageviewIcon />
+              </Avatar>
+            )}
           </Grid>
           <Grid item lg={10} sm={12}>
             <Typography variant="body1" sx={{ fontWeight: 700 }}>

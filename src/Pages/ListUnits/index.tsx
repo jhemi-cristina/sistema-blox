@@ -77,7 +77,7 @@ export const ListUnits = () => {
                         value={filterSelected}
                         onChange={handleSelectedItem}
                         displayEmpty
-                        label="Filtrar"
+                        label="Exibir todos"
                       >
                         <MenuItem value="">
                           <em>Exibir todos</em>

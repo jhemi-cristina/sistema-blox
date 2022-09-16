@@ -1,5 +1,4 @@
-import { Box, Checkbox, Grid, Typography } from "@mui/material";
-import { Button } from "../../Components/Button";
+import { Box, Button, Checkbox, Grid, Typography } from "@mui/material";
 import { Input } from "../../Components/Input";
 import { Container } from "./styles";
 
