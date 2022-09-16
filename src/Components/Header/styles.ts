@@ -6,8 +6,11 @@ export const ContainerHeader = withStyles(() => ({
     gridArea: "header",
     height: "85px",
     width: "100%",
-    fontWeight: 700,
     color: "#ffff",
     backgroundColor: "#608afc",
+
+    "& title": {
+      margin: "10px",
+    },
   },
 }))(Grid);

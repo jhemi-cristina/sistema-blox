@@ -21,15 +21,15 @@ interface ITeste {
 }
 export const ListUnits = () => {
   const [list, setList] = useState("1");
-  const [age, setAge] = useState("");
   const [unitList, setUnitList] = useState<Dispatch<SetStateAction<ITeste>>>();
+  const [filterSelected, setFilterSelected] = useState("");
 
   const handleTabItem = (event: React.SyntheticEvent, newValue: string) => {
     setList(newValue);
   };
 
   const handleSelectedItem = (event: SelectChangeEvent) => {
-    setAge(event.target.value);
+    setFilterSelected(event.target.value);
   };
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export const ListUnits = () => {
 
   return (
     <Container container>
-      <Header title="Gerenciar unidades Curriculares" />
+      <Header />
 
       <Box sx={{ width: "100%", typography: "body1" }}>
         <TabContext value={list}>
@@ -74,28 +74,31 @@ export const ListUnits = () => {
                       <Select
                         labelId="demo-simple-select-standard-label"
                         id="demo-simple-select-standard"
-                        value={age}
+                        value={filterSelected}
                         onChange={handleSelectedItem}
                         displayEmpty
                         label="Filtrar"
                       >
                         <MenuItem value="">
-                          <em>Filtrar</em>
+                          <em>Exibir todos</em>
                         </MenuItem>
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
+                        <MenuItem value="Presencial">Presencial</MenuItem>
+                        <MenuItem value="EAD">EAD</MenuItem>
                       </Select>
                     </FormControl>
                   </Grid>
                 </Grid>
                 <Grid container spacing={2}>
                   {unitList instanceof Array &&
-                    unitList.map((item) => (
-                      <Grid key={item?.id} item lg={4} sm={12} mt={5}>
-                        <CardUnit data={item} />
-                      </Grid>
-                    ))}
+                    unitList
+                      .filter((item) =>
+                        filterSelected ? item.modality === filterSelected : " "
+                      )
+                      .map((item) => (
+                        <Grid key={item?.id} item lg={4} sm={12} mt={5}>
+                          <CardUnit data={item} />
+                        </Grid>
+                      ))}
                 </Grid>
               </Grid>
             </Box>
