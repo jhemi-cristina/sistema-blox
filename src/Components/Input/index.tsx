@@ -10,14 +10,16 @@ interface IInput extends InputHTMLAttributes<HTMLInputElement> {
   values?: string;
   variant?: any;
   InputLabelProps?: any;
+  width?: number | string;
 }
 
-function Input({ label, variant, InputLabelProps, ...props }: IInput) {
+function Input({ label, width, variant, InputLabelProps, ...props }: IInput) {
   return (
     <MaterialInput
       label={label}
       variant={variant}
       InputLabelProps={InputLabelProps}
+      width={width}
       {...props}
     />
   );

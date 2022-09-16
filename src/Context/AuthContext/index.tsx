@@ -1,4 +1,5 @@
 import { createContext, useCallback, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { api } from "../../Services/api";
 
 interface IAuth {
@@ -11,7 +12,10 @@ type SignInData = { login_user_email: string; login_user_password: string };
 const AuthContext = createContext({} as IAuth);
 
 const AuthProvider = ({ children }: any) => {
+  const navigate = useNavigate();
+
   const Token = localStorage.getItem("@BloxSystem:token");
+
   const SignIn = useCallback(
     async ({ login_user_email, login_user_password }: SignInData) => {
       const response = await api.post("/v2/authentication/login", {
@@ -20,9 +24,12 @@ const AuthProvider = ({ children }: any) => {
         institution_id: 22,
       });
       const token = response.data.token;
-      console.log("token", token);
 
-      localStorage.setItem("@BloxSystem:token", token);
+      if (token) {
+        localStorage.setItem("@BloxSystem:token", token);
+      }
+
+      navigate("/List");
     },
     []
   );

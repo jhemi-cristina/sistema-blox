@@ -6,10 +6,10 @@ import {
   InputAdornment,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Input } from "../../Components/Input";
 import { Container } from "./styles";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { VisibilityOff } from "@mui/icons-material";
 import { useAuth } from "../../Context/AuthContext";
 import { Controller, useForm } from "react-hook-form";
 
@@ -22,7 +22,6 @@ export const SignIn = () => {
   function handleSubmitForm() {
     const { login_user_email, login_user_password } = watchFields;
     SignIn({ login_user_email, login_user_password });
-    console.log("watchFields", watchFields);
   }
 
   // const [values, setValues] = React.useState<State>({
@@ -70,6 +69,7 @@ export const SignIn = () => {
                   value={value}
                   label="usuario"
                   variant="standard"
+                  width={500}
                 />
               )}
             />

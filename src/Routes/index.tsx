@@ -1,22 +1,34 @@
-import { TemplateSignIn } from "../Templates/SignIn";
-import { Routes as Router, Route } from "react-router-dom";
-import { TemplateSignUp } from "../Templates/SignUp";
-import { TemplateListUnits } from "../Templates/ListUnits";
+import {
+  Routes as Router,
+  Route,
+  Navigate,
+  useNavigate,
+} from "react-router-dom";
+
 import { useAuth } from "../Context/AuthContext";
+import { useEffect } from "react";
+import { ListUnits } from "../Pages/ListUnits/index";
+import { SignIn } from "../Pages/SignIn";
+import { SignUp } from "../Pages/SignUp/index";
 
 const Routes = () => {
   const { Token } = useAuth();
+
   return (
     <>
       <Router>
         {Token ? (
-          <Route path="/List" element={<TemplateListUnits />} />
+          <>
+            <Route path="/List" element={<ListUnits />} />
+            <Route path="*" element={<Navigate to="/List" />} />
+          </>
         ) : (
           <>
-            <Route path="/" element={<TemplateSignIn />} />
-            <Route path="/register" element={<TemplateSignUp />} />
+            <Route path="/" element={<SignIn />} />
+            <Route path="/register" element={<SignUp />} />
           </>
         )}
+        <Route path="*" element={<Navigate to="/" />} />
       </Router>
     </>
   );
