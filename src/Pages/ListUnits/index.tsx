@@ -1,27 +1,28 @@
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import {
-  BottomNavigation,
-  BottomNavigationAction,
   Box,
-  Card,
   FormControl,
   Grid,
   MenuItem,
-  OutlinedInput,
   Select,
   SelectChangeEvent,
-  Stack,
   Tab,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Header } from "../../Components/Header";
 import { Input } from "../../Components/Input";
+import { CardUnit } from "./Components/CardUnit";
+import { getUnitsService } from "./Service";
 import { Container } from "./styles";
 
+interface ITeste {
+  data: any;
+}
 export const ListUnits = () => {
   const [list, setList] = useState("1");
   const [age, setAge] = useState("");
+  const [unitList, setUnitList] = useState<Dispatch<SetStateAction<ITeste>>>();
 
   const handleTabItem = (event: React.SyntheticEvent, newValue: string) => {
     setList(newValue);
@@ -30,6 +31,18 @@ export const ListUnits = () => {
   const handleSelectedItem = (event: SelectChangeEvent) => {
     setAge(event.target.value);
   };
+
+  useEffect(() => {
+    async function getUnits() {
+      const data = await getUnitsService();
+
+      setUnitList(data);
+    }
+
+    getUnits();
+  }, []);
+
+  // console.log("unitList", unitList);
 
   return (
     <Container container>
@@ -48,7 +61,7 @@ export const ListUnits = () => {
             <Box>
               <Grid container>
                 <Grid container display="flex" alignItems="center">
-                  <Grid item xs={8}>
+                  <Grid item lg={8}>
                     <Typography variant="h1">Arquivos</Typography>
                   </Grid>
 
@@ -76,21 +89,13 @@ export const ListUnits = () => {
                     </FormControl>
                   </Grid>
                 </Grid>
-
-                <Grid item xs={12} mt={5}>
-                  <Card>
-                    <Stack sx={{ backgroundColor: "red", padding: "0px 10px" }}>
-                      Título
-                    </Stack>
-                    <Stack
-                      sx={{ backgroundColor: "blue", padding: "0px 10px" }}
-                    >
-                      Coteúdo
-                    </Stack>
-                    <Stack sx={{ backgroundColor: "red", padding: "0px 10px" }}>
-                      Footer
-                    </Stack>
-                  </Card>
+                <Grid container spacing={2}>
+                  {unitList instanceof Array &&
+                    unitList.map((item) => (
+                      <Grid key={item?.id} item lg={4} sm={12} mt={5}>
+                        <CardUnit data={item} />
+                      </Grid>
+                    ))}
                 </Grid>
               </Grid>
             </Box>
