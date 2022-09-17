@@ -58,7 +58,7 @@ export const ListUnits = () => {
 
   return (
     <Container container>
-      <Grid item md={12}>
+      <Grid item md={12} sm={12}>
         <Box
           sx={{
             gridArea: "header",
@@ -85,8 +85,24 @@ export const ListUnits = () => {
             }}
           >
             <TabList onChange={handleTabItem} aria-label="lab API tabs example">
-              <Tab label="Lista" value="1" sx={{ color: "#ffff" }} />
-              <Tab label="Criar novo" value="2" sx={{ color: "#ffff" }} />
+              <Tab
+                label="Lista"
+                value="1"
+                sx={{
+                  color: "#ffff",
+                  padding: "0px!important",
+                  fontSize: "12px",
+                }}
+              />
+              <Tab
+                label="Criar novo"
+                value="2"
+                sx={{
+                  color: "#ffff",
+                  padding: "0px!important",
+                  fontSize: "12px",
+                }}
+              />
             </TabList>
           </Box>
 
@@ -148,9 +164,8 @@ export const ListUnits = () => {
                 </Grid>
                 <Stack
                   direction="row"
-                  spacing={2}
+                  spacing={5}
                   sx={{
-                    maxWidth: "300px",
                     display: "flex",
                     margin: "0 auto",
                     padding: "70px 0px",
@@ -165,7 +180,6 @@ export const ListUnits = () => {
                       Anterior
                     </Button>
                   </Box>
-                  <Box>{currentPage}</Box>
                   <Box>
                     <Button
                       variant="contained"

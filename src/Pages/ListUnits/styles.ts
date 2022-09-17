@@ -11,5 +11,9 @@ export const Container = withStyles(() => ({
     "& .Mui-selected": {
       color: "#ffff!important",
     },
+
+    "& button": {
+      padding: "6px 110px",
+    },
   },
 }))(Grid);
