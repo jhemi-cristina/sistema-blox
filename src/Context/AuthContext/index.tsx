@@ -34,20 +34,23 @@ const AuthProvider = ({ children }: any) => {
 
   const Token = localStorage.getItem("@BloxSystem:token");
 
-  const SignIn = useCallback(async ({ username, password }: SignInData) => {
-    const response = await api.post("/v2/authentication/login", {
-      username: username,
-      password: password,
-      institution_id: 22,
-    });
-    const token = response.data.token;
+  const SignIn = useCallback(
+    async ({ username, password }: SignInData) => {
+      const response = await api.post("/v2/authentication/login", {
+        username: username,
+        password: password,
+        institution_id: 22,
+      });
+      const token = response.data.token;
 
-    if (token) {
-      localStorage.setItem("@BloxSystem:token", token);
-    }
+      if (token) {
+        localStorage.setItem("@BloxSystem:token", token);
+      }
 
-    navigate("/List");
-  }, []);
+      navigate("/List");
+    },
+    [navigate]
+  );
   const SignUp = useCallback(
     async ({
       name,
