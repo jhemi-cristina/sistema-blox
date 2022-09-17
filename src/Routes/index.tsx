@@ -1,12 +1,6 @@
-import {
-  Routes as Router,
-  Route,
-  Navigate,
-  useNavigate,
-} from "react-router-dom";
+import { Routes as Router, Route, Navigate } from "react-router-dom";
 
 import { useAuth } from "../Context/AuthContext";
-import { useEffect } from "react";
 import { ListUnits } from "../Pages/ListUnits/index";
 import { SignIn } from "../Pages/SignIn";
 import { SignUp } from "../Pages/SignUp/index";

@@ -29,7 +29,6 @@ export const ListUnits = () => {
   const [searchValue, setSearchValue] = useState("");
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  // const [nextPage, setNextPage] = useState(2);
 
   const handleTabItem = (event: React.SyntheticEvent, newValue: string) => {
     setList(newValue);
