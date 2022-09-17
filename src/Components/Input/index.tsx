@@ -1,27 +1,11 @@
-import { InputHTMLAttributes } from "react";
+import { FormControl } from "@mui/material";
 import { MaterialInput } from "./styles";
 
-interface IInput extends InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  props?: Node;
-  form?: any;
-  icon?: boolean;
-  endAdornment?: any;
-  values?: string;
-  variant?: any;
-  InputLabelProps?: any;
-  width?: number | string;
-}
-
-function Input({ label, width, variant, InputLabelProps, ...props }: IInput) {
+function Input({ ...rest }) {
   return (
-    <MaterialInput
-      label={label}
-      variant={variant}
-      InputLabelProps={InputLabelProps}
-      width={width}
-      {...props}
-    />
+    <FormControl variant="standard" sx={{ width: "100%" }}>
+      <MaterialInput {...rest} />
+    </FormControl>
   );
 }
 

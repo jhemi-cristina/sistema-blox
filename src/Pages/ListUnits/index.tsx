@@ -9,10 +9,11 @@ import {
   Tab,
   Typography,
 } from "@mui/material";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { Header } from "../../Components/Header";
-import { Input } from "../../Components/Input";
+import { Dispatch, SetStateAction, useEffect, useMemo, useState } from "react";
+
+import { InputSearch } from "../../Components/InputSearch";
 import { CardUnit } from "./Components/CardUnit";
+import { filterModality, filterTitleAndId } from "./Functions";
 import { getUnitsService } from "./Service";
 import { Container } from "./styles";
 
@@ -23,6 +24,8 @@ export const ListUnits = () => {
   const [list, setList] = useState("1");
   const [unitList, setUnitList] = useState<Dispatch<SetStateAction<ITeste>>>();
   const [filterSelected, setFilterSelected] = useState("");
+  const [searchValue, setSearchValue] = useState("");
+  const [search, setSearch] = useState("");
 
   const handleTabItem = (event: React.SyntheticEvent, newValue: string) => {
     setList(newValue);
@@ -32,44 +35,78 @@ export const ListUnits = () => {
     setFilterSelected(event.target.value);
   };
 
+  const handleFilterItem = (event: SelectChangeEvent) => {
+    setSearchValue(event.target.value);
+  };
+
   useEffect(() => {
     async function getUnits() {
       const data = await getUnitsService();
-
       setUnitList(data);
     }
-
     getUnits();
   }, []);
 
-  // console.log("unitList", unitList);
+  useMemo(() => {
+    if (searchValue && searchValue.length !== search.length) {
+      setSearch("");
+    }
+  }, [search.length, searchValue]);
 
   return (
     <Container container>
-      <Header />
+      <Grid item md={12}>
+        <Box
+          sx={{
+            gridArea: "header",
+            padding: "15px 30px",
+            width: "100%",
+            color: "#ffff",
+            backgroundColor: "#608afc",
+          }}
+        >
+          <Typography sx={{ fontWeight: 700 }}>
+            Gerenciar unidades Curriculares
+          </Typography>
+        </Box>
+      </Grid>
 
       <Box sx={{ width: "100%", typography: "body1" }}>
         <TabContext value={list}>
-          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <Box
+            sx={{
+              borderBottom: 1,
+              borderColor: "divider",
+              backgroundColor: "#608afc",
+              color: "#ffff",
+            }}
+          >
             <TabList onChange={handleTabItem} aria-label="lab API tabs example">
-              <Tab label="Item One" value="1" />
-              <Tab label="Item Two" value="2" />
+              <Tab label="Lista" value="1" sx={{ color: "#ffff" }} />
+              <Tab label="Criar novo" value="2" sx={{ color: "#ffff" }} />
             </TabList>
           </Box>
 
           <TabPanel value="1">
             <Box>
               <Grid container>
-                <Grid container display="flex" alignItems="center">
-                  <Grid item lg={8}>
+                <Grid container display="flex" spacing={2} alignItems="center">
+                  <Grid item lg={7}>
                     <Typography variant="h1">Arquivos</Typography>
                   </Grid>
 
                   <Grid item xs={2}>
-                    <Input variant="standard" placeholder="Titulo ou id" />
+                    <InputSearch
+                      variant="standard"
+                      placeholder="Titulo ou id"
+                      onChange={(e: SelectChangeEvent<string>) =>
+                        handleFilterItem(e)
+                      }
+                      onClick={() => setSearch(searchValue)}
+                    />
                   </Grid>
 
-                  <Grid item xs={2}>
+                  <Grid item xs={3}>
                     <FormControl variant="standard" sx={{ width: "100%" }}>
                       <Select
                         labelId="demo-simple-select-standard-label"
@@ -91,9 +128,8 @@ export const ListUnits = () => {
                 <Grid container spacing={2}>
                   {unitList instanceof Array &&
                     unitList
-                      .filter((item) =>
-                        filterSelected ? item.modality === filterSelected : " "
-                      )
+                      .filter((item) => filterModality(item, filterSelected))
+                      .filter((item) => filterTitleAndId(item, search))
                       .map((item) => (
                         <Grid key={item?.id} item lg={4} sm={12} mt={5}>
                           <CardUnit data={item} />
@@ -103,7 +139,6 @@ export const ListUnits = () => {
               </Grid>
             </Box>
           </TabPanel>
-          {/* <TabPanel value="2">Item Two</TabPanel> */}
         </TabContext>
       </Box>
     </Container>

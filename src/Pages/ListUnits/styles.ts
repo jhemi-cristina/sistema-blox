@@ -7,5 +7,9 @@ export const Container = withStyles(() => ({
       fontSize: "25px",
       fontWeight: 700,
     },
+
+    "& .Mui-selected": {
+      color: "#ffff!important",
+    },
   },
 }))(Grid);

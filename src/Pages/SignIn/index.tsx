@@ -1,48 +1,21 @@
-import {
-  Box,
-  Button,
-  Grid,
-  IconButton,
-  InputAdornment,
-  Typography,
-} from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { Input } from "../../Components/Input";
 import { Container } from "./styles";
-import { VisibilityOff } from "@mui/icons-material";
 import { useAuth } from "../../Context/AuthContext";
 import { Controller, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 export const SignIn = () => {
-  const [showPassword, setShowPassword] = useState(true);
   const { SignIn } = useAuth();
   const { control, handleSubmit, watch } = useForm();
   const watchFields = watch();
+  const navigate = useNavigate();
 
   function handleSubmitForm() {
     const { username, password } = watchFields;
     SignIn({ username, password });
   }
 
-  // const [values, setValues] = React.useState<State>({
-  //   amount: "",
-  //   password: "",
-  //   weight: "",
-  //   weightRange: "",
-  //   showPassword: false,
-  // });
-  // const handleClickShowPassword = () => {
-  //   setValues({
-  //     ...values,
-  //     showPassword: !values.showPassword,
-  //   });
-
-  //   const handleMouseDownPassword = (
-  //     event: React.MouseEvent<HTMLButtonElement>
-  //   ) => {
-  //     event.preventDefault();
-  //   };
-  // };
   return (
     <form onSubmit={handleSubmit(handleSubmitForm)}>
       <Container container>
@@ -53,13 +26,13 @@ export const SignIn = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <Grid item xs={12} mb={5}>
+            <Grid item md={12} mb={5}>
               <Typography variant="h1">Seja Bem-Vindo(a)!</Typography>
             </Grid>
-            <Grid item xs={12} mb={5}>
+            <Grid item md={12} mb={5}>
               <Typography variant="subtitle1">Painel de acesso</Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item md={12}>
               <Controller
                 control={control}
                 name="username"
@@ -70,12 +43,11 @@ export const SignIn = () => {
                     value={value}
                     label="nome do usuario"
                     variant="standard"
-                    width={500}
                   />
                 )}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item md={12}>
               <Controller
                 control={control}
                 name="password"
@@ -91,10 +63,10 @@ export const SignIn = () => {
                 )}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item md={12}>
               <Grid container spacing={2} mt={5}>
                 <Grid item>
-                  <Button />
+                  <Button onClick={() => navigate("/register")}>VOLTAR</Button>
                 </Grid>
                 <Grid item>
                   <Button onClick={handleSubmitForm}>ACESSAR</Button>
