@@ -2,7 +2,7 @@ import { Box, FormControl } from "@mui/material";
 import { MaterialInput } from "./styles";
 import SearchIcon from "@mui/icons-material/Search";
 
-function InputSearch({ onClick, ...rest }: any) {
+export function InputSearch({ onClick, ...rest }: any) {
   return (
     <FormControl variant="standard" sx={{ width: "100%" }}>
       <Box>
@@ -12,5 +12,3 @@ function InputSearch({ onClick, ...rest }: any) {
     </FormControl>
   );
 }
-
-export { InputSearch };

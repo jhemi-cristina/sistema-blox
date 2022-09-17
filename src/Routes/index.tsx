@@ -5,7 +5,7 @@ import { ListUnits } from "../Pages/ListUnits/index";
 import { SignIn } from "../Pages/SignIn";
 import { SignUp } from "../Pages/SignUp/index";
 
-const Routes = () => {
+export const Routes = () => {
   const { Token } = useAuth();
 
   return (
@@ -27,5 +27,3 @@ const Routes = () => {
     </>
   );
 };
-
-export { Routes };

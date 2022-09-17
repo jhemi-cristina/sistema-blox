@@ -7,7 +7,7 @@ Requisitos
 
 O que esperamos
 - Utilização de versionamento de código (git) - OK
-- Criar uma documentação de como rodar sua aplicação - README -
+- Criar uma documentação de como rodar sua aplicação - README - OK
 - Criar uma breve descrição da solução utilizada - 
 
 Avaliação
