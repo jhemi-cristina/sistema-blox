@@ -58,7 +58,7 @@ export const SignUp = () => {
                 )}
               />
             </Grid>
-            <Grid item md={6}>
+            <Grid item md={6} sm={12}>
               <Controller
                 control={control}
                 name="cpf"
@@ -80,22 +80,24 @@ export const SignUp = () => {
                 )}
               />
             </Grid>
-            <Grid item md={6}>
-              <Controller
-                control={control}
-                name="date"
-                render={({ field: { onChange, value, name } }) => (
-                  <Input
-                    InputLabelProps={{ shrink: true }}
-                    onChange={onChange}
-                    name={name}
-                    value={value}
-                    label="data de nascimento"
-                    variant="outlined"
-                    type="date"
-                  />
-                )}
-              />
+            <Grid item md={6} sm={12}>
+              <Box sx={{ width: "100%!important" }}>
+                <Controller
+                  control={control}
+                  name="date"
+                  render={({ field: { onChange, value, name } }) => (
+                    <Input
+                      InputLabelProps={{ width: "100%", shrink: true }}
+                      onChange={onChange}
+                      name={name}
+                      value={value}
+                      label="data de nascimento"
+                      variant="outlined"
+                      type="date"
+                    />
+                  )}
+                />
+              </Box>
             </Grid>
             <Grid item md={12}>
               <Controller
@@ -173,6 +175,7 @@ export const SignUp = () => {
               <Grid container spacing={2} mt={5}>
                 <Grid item>
                   <Button
+                    variant="contained"
                     onClick={handleSubmitForm}
                     disabled={email?.length <= 9 || cpf?.length < 11}
                   >

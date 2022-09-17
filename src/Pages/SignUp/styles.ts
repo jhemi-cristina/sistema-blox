@@ -13,6 +13,10 @@ export const Container = withStyles(() => ({
       minWidth: "100%",
     },
 
+    "& .MuiGrid-item": {
+      width: "100%",
+    },
+
     "& h1": {
       fontSize: "25px",
       marginTop: "70px",

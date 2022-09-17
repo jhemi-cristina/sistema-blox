@@ -70,8 +70,12 @@ export const SignIn = () => {
                 />
               </Grid>
             </Box>
-            <Grid item md={12}>
-              <Stack direction="row" spacing={2} sx={{ marginTop: "40px" }}>
+            <Grid item md={12} sm={12}>
+              <Stack
+                direction="row"
+                spacing={2}
+                sx={{ marginTop: "40px", width: "100%" }}
+              >
                 <Grid item>
                   <Button
                     variant="contained"
@@ -80,10 +84,12 @@ export const SignIn = () => {
                     VOLTAR
                   </Button>
                 </Grid>
-                <Grid item>
-                  <Button variant="contained" onClick={handleSubmitForm}>
-                    ACESSAR
-                  </Button>
+                <Grid item md={12} sm={12}>
+                  <Grid item>
+                    <Button variant="contained" onClick={handleSubmitForm}>
+                      ACESSAR
+                    </Button>
+                  </Grid>
                 </Grid>
               </Stack>
             </Grid>

@@ -110,11 +110,11 @@ export const ListUnits = () => {
             <Box>
               <Grid container>
                 <Grid container display="flex" spacing={2} alignItems="center">
-                  <Grid item lg={7}>
+                  <Grid item md={7} sm={12}>
                     <Typography variant="h1">Arquivos</Typography>
                   </Grid>
 
-                  <Grid item xs={2}>
+                  <Grid item md={2} sm={12}>
                     <InputSearch
                       variant="standard"
                       placeholder="Titulo ou id"
@@ -125,7 +125,7 @@ export const ListUnits = () => {
                     />
                   </Grid>
 
-                  <Grid item xs={3}>
+                  <Grid item md={3} sm={12}>
                     <FormControl variant="standard" sx={{ width: "100%" }}>
                       <Select
                         labelId="demo-simple-select-standard-label"
@@ -150,18 +150,20 @@ export const ListUnits = () => {
                     </FormControl>
                   </Grid>
                 </Grid>
-
-                <Grid container spacing={2}>
-                  {unitList instanceof Array &&
-                    unitList
-                      .filter((item) => filterModality(item, filterSelected))
-                      .filter((item) => filterTitleAndId(item, search))
-                      .map((item) => (
-                        <Grid key={item?.id} item lg={4} sm={12} mt={5}>
-                          <CardUnit data={item} />
-                        </Grid>
-                      ))}
+                <Grid item sm={12}>
+                  <Grid container spacing={2}>
+                    {unitList instanceof Array &&
+                      unitList
+                        .filter((item) => filterModality(item, filterSelected))
+                        .filter((item) => filterTitleAndId(item, search))
+                        .map((item) => (
+                          <Grid key={item?.id} item lg={4} sm={12} mt={5}>
+                            <CardUnit data={item} />
+                          </Grid>
+                        ))}
+                  </Grid>
                 </Grid>
+
                 <Stack
                   direction="row"
                   spacing={5}
@@ -169,26 +171,31 @@ export const ListUnits = () => {
                     display: "flex",
                     margin: "0 auto",
                     padding: "70px 0px",
+                    width: "100%",
                   }}
                 >
-                  <Box>
-                    <Button
-                      variant="contained"
-                      onClick={() => setCurrentPage(currentPage - 1)}
-                      disabled={currentPage === 1}
-                    >
-                      Anterior
-                    </Button>
-                  </Box>
-                  <Box>
-                    <Button
-                      variant="contained"
-                      onClick={() => setCurrentPage(currentPage + 1)}
-                      disabled={currentPage === 10}
-                    >
-                      Proximo
-                    </Button>
-                  </Box>
+                  <Grid item md={12} sm={6}>
+                    <Box>
+                      <Button
+                        variant="contained"
+                        onClick={() => setCurrentPage(currentPage - 1)}
+                        disabled={currentPage === 1}
+                      >
+                        Anterior
+                      </Button>
+                    </Box>
+                  </Grid>
+                  <Grid item md={12} sm={6}>
+                    <Box>
+                      <Button
+                        variant="contained"
+                        onClick={() => setCurrentPage(currentPage + 1)}
+                        disabled={currentPage === 10}
+                      >
+                        Proximo
+                      </Button>
+                    </Box>
+                  </Grid>
                 </Stack>
               </Grid>
             </Box>
