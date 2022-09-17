@@ -84,7 +84,7 @@ const AuthProvider = ({ children }: any) => {
           toast.error("Erro ao realizar cadastro, tente novamente!");
         });
     },
-    []
+    [navigate]
   );
 
   return (
