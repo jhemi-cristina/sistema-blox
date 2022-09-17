@@ -1,11 +1,13 @@
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import {
   Box,
+  Button,
   FormControl,
   Grid,
   MenuItem,
   Select,
   SelectChangeEvent,
+  Stack,
   Tab,
   Typography,
 } from "@mui/material";
@@ -26,6 +28,8 @@ export const ListUnits = () => {
   const [filterSelected, setFilterSelected] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  // const [nextPage, setNextPage] = useState(2);
 
   const handleTabItem = (event: React.SyntheticEvent, newValue: string) => {
     setList(newValue);
@@ -41,11 +45,11 @@ export const ListUnits = () => {
 
   useEffect(() => {
     async function getUnits() {
-      const data = await getUnitsService();
+      const data = await getUnitsService(currentPage);
       setUnitList(data);
     }
     getUnits();
-  }, []);
+  }, [currentPage]);
 
   useMemo(() => {
     if (searchValue && searchValue.length !== search.length) {
@@ -131,6 +135,7 @@ export const ListUnits = () => {
                     </FormControl>
                   </Grid>
                 </Grid>
+
                 <Grid container spacing={2}>
                   {unitList instanceof Array &&
                     unitList
@@ -142,6 +147,36 @@ export const ListUnits = () => {
                         </Grid>
                       ))}
                 </Grid>
+                <Stack
+                  direction="row"
+                  spacing={2}
+                  sx={{
+                    maxWidth: "300px",
+                    display: "flex",
+                    margin: "0 auto",
+                    padding: "70px 0px",
+                  }}
+                >
+                  <Box>
+                    <Button
+                      variant="contained"
+                      onClick={() => setCurrentPage(currentPage - 1)}
+                      disabled={currentPage === 1}
+                    >
+                      Anterior
+                    </Button>
+                  </Box>
+                  <Box>{currentPage}</Box>
+                  <Box>
+                    <Button
+                      variant="contained"
+                      onClick={() => setCurrentPage(currentPage + 1)}
+                      disabled={currentPage === 10}
+                    >
+                      Proximo
+                    </Button>
+                  </Box>
+                </Stack>
               </Grid>
             </Box>
           </TabPanel>

@@ -1,7 +1,7 @@
 Requisitos
 - Utilização a lib Material UI (https://mui.com/) - OK
-- Validação de campos CPF e Email no formulário de cadastro
-- Deve ser possível paginar as unidades curriculares
+- Validação de campos CPF e Email no formulário de cadastro - OK
+- Deve ser possível paginar as unidades curriculares 
 - Deve ser possível listar as unidades curriculares de acordo com sua situação. blox#status - OK
 
 
