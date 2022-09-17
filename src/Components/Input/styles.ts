@@ -4,7 +4,7 @@ import { withStyles } from "@mui/styles";
 export const MaterialInput = withStyles(() => ({
   root: {
     "& input": {
-      // width: "100%",
+      width: "100%!important",
     },
   },
 }))(TextField);

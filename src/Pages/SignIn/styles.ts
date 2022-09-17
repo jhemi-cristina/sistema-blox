@@ -19,7 +19,7 @@ export const Container = withStyles(() => ({
     },
 
     "& button": {
-      padding: "10px 80px",
+      padding: "6px 80px",
     },
   },
 }))(Grid);

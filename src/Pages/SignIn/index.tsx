@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import { Input } from "../../Components/Input";
 import { Container } from "./styles";
 import { useAuth } from "../../Context/AuthContext";
@@ -19,7 +19,7 @@ export const SignIn = () => {
   return (
     <form onSubmit={handleSubmit(handleSubmitForm)}>
       <Container container>
-        <Box sx={{ maxWidth: "50%", margin: "0 auto" }}>
+        <Box sx={{ maxWidth: "100%", margin: "0 auto" }}>
           <Grid
             container
             direction="column"
@@ -32,46 +32,60 @@ export const SignIn = () => {
             <Grid item md={12} mb={5}>
               <Typography variant="subtitle1">Painel de acesso</Typography>
             </Grid>
-            <Grid item md={12}>
-              <Controller
-                control={control}
-                name="username"
-                render={({ field: { onChange, value, name } }) => (
-                  <Input
-                    onChange={onChange}
-                    name={name}
-                    value={value}
-                    label="nome do usuario"
-                    variant="standard"
-                  />
-                )}
-              />
-            </Grid>
-            <Grid item md={12}>
-              <Controller
-                control={control}
-                name="password"
-                render={({ field: { onChange, value, name } }) => (
-                  <Input
-                    onChange={onChange}
-                    name={name}
-                    value={value}
-                    label="Senha"
-                    variant="standard"
-                    type="password"
-                  />
-                )}
-              />
-            </Grid>
-            <Grid item md={12}>
-              <Grid container spacing={2} mt={5}>
-                <Grid item>
-                  <Button onClick={() => navigate("/register")}>VOLTAR</Button>
-                </Grid>
-                <Grid item>
-                  <Button onClick={handleSubmitForm}>ACESSAR</Button>
-                </Grid>
+            <Box
+              sx={{
+                width: 500,
+                maxWidth: "100%",
+              }}
+            >
+              <Grid item md={12}>
+                <Controller
+                  control={control}
+                  name="username"
+                  render={({ field: { onChange, value, name } }) => (
+                    <Input
+                      onChange={onChange}
+                      name={name}
+                      value={value}
+                      label="nome do usuario"
+                      variant="standard"
+                    />
+                  )}
+                />
               </Grid>
+              <Grid item md={12}>
+                <Controller
+                  control={control}
+                  name="password"
+                  render={({ field: { onChange, value, name } }) => (
+                    <Input
+                      onChange={onChange}
+                      name={name}
+                      value={value}
+                      label="Senha"
+                      variant="standard"
+                      type="password"
+                    />
+                  )}
+                />
+              </Grid>
+            </Box>
+            <Grid item md={12}>
+              <Stack direction="row" spacing={2} sx={{ marginTop: "40px" }}>
+                <Grid item>
+                  <Button
+                    variant="contained"
+                    onClick={() => navigate("/register")}
+                  >
+                    VOLTAR
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button variant="contained" onClick={handleSubmitForm}>
+                    ACESSAR
+                  </Button>
+                </Grid>
+              </Stack>
             </Grid>
           </Grid>
         </Box>
