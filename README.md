@@ -13,10 +13,12 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Em seguida faça o clone do projeto com `git clone https://github.com/jhemi-cristina/sistema-blox.git`
 - Feito isso acesse a pasta do repositório com `cd sistema-blox`
 - Faça a instalação das dependências com `yarn ` ou `npm install` (Recomendamos a utilização do Yarn).
+- Pode acessar o site direto, por esse link: sistema-blox.netlify.app
 
 # Startando o Front-end:
 
 - basta rodar `yarn start` ou `npm start`
+
 
 # Documentação técnica:
 
