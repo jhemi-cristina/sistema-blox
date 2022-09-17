@@ -2,24 +2,24 @@ Requisitos
 - Utilização a lib Material UI (https://mui.com/) - OK
 - Validação de campos CPF e Email no formulário de cadastro
 - Deve ser possível paginar as unidades curriculares
-- Deve ser possível listar as unidades curriculares de acordo com sua situação. blox#status
+- Deve ser possível listar as unidades curriculares de acordo com sua situação. blox#status - OK
 
 
 O que esperamos
-- Utilização de versionamento de código (git)
-- Criar uma documentação de como rodar sua aplicação - README
-- Criar uma breve descrição da solução utilizada
+- Utilização de versionamento de código (git) - OK
+- Criar uma documentação de como rodar sua aplicação - README -
+- Criar uma breve descrição da solução utilizada - 
 
 Avaliação
-- Ao final do desafio, esperamos que a solução de aplicação Front-End apresentada permita o seguinte fluxo, interagindo com a API acima:
-- Criação de usuário
-- Logar com o usuário recém-criado
-- Após logar, exibir a tela de Listagem de Unidades Curriculares.
+- Ao final do desafio, esperamos que a solução de aplicação Front-End apresentada permita o seguinte fluxo, interagindo com a API acima:  - OK 
+- Criação de usuário - OK
+- Logar com o usuário recém-criado - OK
+- Após logar, exibir a tela de Listagem de Unidades Curriculares - OK
 
 Pontos analisados:
 - Compreensão dos requisitos
-- Aplicação de conceitos de clean code, DRY, SOLID, KISS, YAGNI, etc.
-- Compreensão do ecossistema React, React Hooks e seus fundamentos
-- Estruturação dos componentes
-- Estruturação do CSS
-- Utilização de Context API
+- Aplicação de conceitos de clean code, DRY, SOLID, KISS, YAGNI, etc. - OK 
+- Compreensão do ecossistema React, React Hooks e seus fundamentos  - OK 
+- Estruturação dos componentes - OK 
+- Estruturação do CSS - OK
+- Utilização de Context API - OK

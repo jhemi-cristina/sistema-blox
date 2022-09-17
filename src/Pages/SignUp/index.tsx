@@ -2,6 +2,7 @@ import { Box, Button, Checkbox, Grid, Typography } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { Input } from "../../Components/Input";
 import { useAuth } from "../../Context/AuthContext";
+
 import { Container } from "./styles";
 
 export const SignUp = () => {
@@ -9,8 +10,9 @@ export const SignUp = () => {
   const { SignUp } = useAuth();
   const watchFields = watch();
 
+  const { name, cpf, date, email, password, password_confirm } = watchFields;
+
   function handleSubmitForm() {
-    const { name, cpf, date, email, password, password_confirm } = watchFields;
     SignUp({
       name,
       cpf,
@@ -48,7 +50,10 @@ export const SignUp = () => {
                     value={value}
                     label="Nome"
                     variant="outlined"
-                    type="name"
+                    error={watchFields?.name?.length < 3}
+                    helperText={
+                      watchFields?.name?.length < 3 && "*Campo obrigatório."
+                    }
                   />
                 )}
               />
@@ -64,8 +69,13 @@ export const SignUp = () => {
                     name={name}
                     value={value}
                     label="CPF"
+                    placeholder="999999999"
                     variant="outlined"
-                    type="cpf"
+                    error={cpf?.length < 11}
+                    helperText={
+                      cpf?.length < 11 &&
+                      "*Este campo é obrigatório e deve ter no minimo 11 caracteres"
+                    }
                   />
                 )}
               />
@@ -100,6 +110,10 @@ export const SignUp = () => {
                     label="E-mail"
                     variant="outlined"
                     type="email"
+                    error={email?.length <= 9}
+                    helperText={
+                      email?.length <= 9 && "*Este campo é obrigatório"
+                    }
                   />
                 )}
               />
@@ -117,6 +131,11 @@ export const SignUp = () => {
                     label="Crie sua senha"
                     variant="outlined"
                     type="password"
+                    error={password?.length < 8}
+                    helperText={
+                      password?.length < 8 &&
+                      "*A senha deve ter no mínimo 8 caracteres."
+                    }
                   />
                 )}
               />
@@ -134,6 +153,12 @@ export const SignUp = () => {
                     label="Confirme sua senha"
                     variant="outlined"
                     type="password"
+                    error={password_confirm && password_confirm !== password}
+                    helperText={
+                      password_confirm &&
+                      password_confirm !== password &&
+                      "*A senha deve ser a mesma digitada anteriormente."
+                    }
                   />
                 )}
               />
@@ -147,7 +172,12 @@ export const SignUp = () => {
             <Grid item md={12}>
               <Grid container spacing={2} mt={5}>
                 <Grid item>
-                  <Button onClick={handleSubmitForm}>CADASTRAR</Button>
+                  <Button
+                    onClick={handleSubmitForm}
+                    disabled={email?.length <= 9 || cpf?.length < 11}
+                  >
+                    CADASTRAR
+                  </Button>
                 </Grid>
               </Grid>
             </Grid>
