@@ -119,8 +119,14 @@ export const ListUnits = () => {
                         <MenuItem value="">
                           <em>Exibir todos</em>
                         </MenuItem>
-                        <MenuItem value="Presencial">Presencial</MenuItem>
-                        <MenuItem value="EAD">EAD</MenuItem>
+                        <MenuItem value="Presencial">
+                          Categoria - Presencial
+                        </MenuItem>
+                        <MenuItem value="EAD">Categoria - EAD</MenuItem>
+                        <MenuItem value="accepted">Status - Aprovado</MenuItem>
+                        <MenuItem value="active">
+                          Status - Aberto para edição
+                        </MenuItem>
                       </Select>
                     </FormControl>
                   </Grid>
