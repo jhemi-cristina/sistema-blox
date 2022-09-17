@@ -171,7 +171,6 @@ export const ListUnits = () => {
                     display: "flex",
                     margin: "0 auto",
                     padding: "70px 0px",
-                    width: "100%",
                   }}
                 >
                   <Grid item md={12} sm={6}>
